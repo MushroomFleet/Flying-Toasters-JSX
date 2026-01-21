@@ -1,0 +1,78 @@
+/*
+ * Flying Toasters Screensaver - Resource File
+ */
+
+#include <windows.h>
+#include <scrnsave.h>
+
+/* Dialog control IDs */
+#define IDC_TOASTER_SLIDER   1001
+#define IDC_TOASTER_LABEL    1002
+#define IDC_SCANLINES        1003
+#define IDC_GLOW             1004
+#define IDC_TRAILS           1005
+
+/* Screensaver description (shown in Display Properties) */
+STRINGTABLE
+BEGIN
+    IDS_DESCRIPTION "Flying Toasters - SVGA Wireframe"
+END
+
+/* Configuration dialog */
+DLG_SCRNSAVECONFIGURE DIALOG 0, 0, 220, 160
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Flying Toasters Configuration"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    /* Title */
+    LTEXT           "Flying Toasters - SVGA Wireframe", -1, 10, 10, 200, 10
+    LTEXT           "A tribute to Berkeley Systems' After Dark", -1, 10, 22, 200, 10
+
+    /* Separator */
+    CONTROL         "", -1, "STATIC", SS_ETCHEDHORZ, 10, 38, 200, 1
+
+    /* Toaster count slider */
+    LTEXT           "Toasters: 8", IDC_TOASTER_LABEL, 10, 48, 80, 10
+    CONTROL         "", IDC_TOASTER_SLIDER, "msctls_trackbar32", 
+                    TBS_AUTOTICKS | WS_TABSTOP, 10, 60, 200, 20
+
+    /* Visual effects checkboxes */
+    GROUPBOX        "Visual Effects", -1, 10, 85, 200, 50
+    AUTOCHECKBOX    "CRT Scanlines", IDC_SCANLINES, 20, 98, 80, 10
+    AUTOCHECKBOX    "Vertex Glow", IDC_GLOW, 110, 98, 80, 10
+    AUTOCHECKBOX    "Motion Trails", IDC_TRAILS, 20, 115, 80, 10
+
+    /* Buttons */
+    DEFPUSHBUTTON   "OK", IDOK, 105, 142, 50, 14
+    PUSHBUTTON      "Cancel", IDCANCEL, 160, 142, 50, 14
+END
+
+/* Version info */
+VS_VERSION_INFO VERSIONINFO
+FILEVERSION     1,0,0,0
+PRODUCTVERSION  1,0,0,0
+FILEFLAGSMASK   VS_FFI_FILEFLAGSMASK
+FILEFLAGS       0
+FILEOS          VOS_NT_WINDOWS32
+FILETYPE        VFT_APP
+FILESUBTYPE     VFT2_UNKNOWN
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904B0"
+        BEGIN
+            VALUE "CompanyName", "Drift Johnson"
+            VALUE "FileDescription", "Flying Toasters SVGA Wireframe Screensaver"
+            VALUE "FileVersion", "1.0.0.0"
+            VALUE "InternalName", "flying_toasters"
+            VALUE "LegalCopyright", "MIT License"
+            VALUE "OriginalFilename", "flying_toasters.scr"
+            VALUE "ProductName", "Flying Toasters Screensaver"
+            VALUE "ProductVersion", "1.0.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
