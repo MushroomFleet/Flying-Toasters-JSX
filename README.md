@@ -34,7 +34,13 @@ Flying-Toasters-JSX/
 ├── README.md                           # This file
 ├── demo.html                           # Standalone interactive demo
 ├── flying-toasters.jsx                 # React component
-└── Flying-Toasters-JSX-integration.md  # Developer integration guide
+├── Flying-Toasters-JSX-integration.md  # Developer integration guide
+└── windows-scr/                        # Native Windows screensaver
+    ├── flying_toasters.c               # C source code
+    ├── flying_toasters.rc              # Windows resources
+    ├── Makefile                        # MinGW build
+    ├── build_msvc.bat                  # MSVC build
+    └── README.md                       # Windows-specific docs
 ```
 
 ## 🚀 Getting Started
@@ -57,6 +63,24 @@ function App() {
 ```
 
 For detailed integration instructions, customization options, and advanced usage, see the **[Integration Guide](Flying-Toasters-JSX-integration.md)**.
+
+### Option 3: Native Windows Screensaver (.scr)
+
+For a true Windows screensaver experience:
+
+```bash
+cd windows-scr
+
+# MinGW
+make
+make install
+
+# Or MSVC (from Developer Command Prompt)
+build_msvc.bat
+build_msvc.bat install
+```
+
+See **[windows-scr/README.md](windows-scr/README.md)** for detailed build instructions.
 
 ## 🎨 Technical Highlights
 
